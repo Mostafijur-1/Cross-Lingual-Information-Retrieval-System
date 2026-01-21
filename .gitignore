@@ -1,0 +1,61 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# =========================
+# Data files (LARGE)
+# =========================
+moduleA/data/raw/*.txt
+moduleA/data/processed/*.jsonl
+moduleA/data/processed/*.json
+moduleA/data/processed/*.csv
+
+# =========================
+# Index & embeddings
+# =========================
+index/
+*.pkl
+*.npy
+
+# =========================
+# NLP Models / Caches
+# =========================
+.cache/
+.spacy/
+stanza_resources/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# =========================
+# Secrets (if added later)
+# =========================
+.env

@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+langdetect
+spacy
+stanza
+sentence-transformers
+tqdm
+selenium
