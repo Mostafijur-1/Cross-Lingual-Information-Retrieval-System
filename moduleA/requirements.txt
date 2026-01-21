@@ -6,3 +6,6 @@ stanza
 sentence-transformers
 tqdm
 selenium
+googletrans==4.0.0-rc1
+nltk
+indic-transliteration
