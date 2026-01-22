@@ -12,3 +12,4 @@ indic-transliteration
 scikit-learn
 rank-bm25
 jellyfish
+flask

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CLIR Search</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      }
+      
+      .search-hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      
+      .search-container {
+        max-width: 800px;
+        text-align: center;
+      }
+      
+      .logo-icon {
+        width: 72px;
+        height: 72px;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        font-size: 36px;
+      }
+      
+      .search-title {
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -2px;
+        color: white;
+        margin-bottom: 12px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      .search-subtitle {
+        font-size: 1.15rem;
+        color: #cbd5e1;
+        margin-bottom: 32px;
+        font-weight: 400;
+      }
+      
+      .search-form {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      
+      .search-input {
+        flex: 1;
+        padding: 14px 20px !important;
+        font-size: 1.05rem;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        background: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      
+      .search-input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+        outline: none;
+      }
+      
+      .search-button {
+        padding: 14px 32px !important;
+        font-size: 1.05rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      
+      .search-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      }
+      
+      .search-button:active {
+        transform: translateY(0);
+      }
+      
+      .search-hints {
+        margin-top: 24px;
+      }
+      
+      .hint-item {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.08);
+        color: #cbd5e1;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        margin: 0 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      
+      @media (max-width: 768px) {
+        .search-title { font-size: 2rem; }
+        .search-form { flex-direction: column; }
+        .search-button { width: 100%; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="search-hero">
+      <div class="search-container">
+        <div class="logo-icon">🔍</div>
+        <h1 class="search-title">CLIR Search</h1>
+        <p class="search-subtitle">Cross-lingual information retrieval for English & Bangla</p>
+        
+        <form action="/search" method="get" class="search-form">
+          <input
+            type="text"
+            name="q"
+            class="form-control search-input"
+            placeholder="Search in English, Bangla, or transliteration…"
+            value="{{ request.args.get('q','') }}"
+            autofocus
+          >
+          <button type="submit" class="btn search-button">
+            <i class="bi bi-search"></i> Search
+          </button>
+        </form>
+        
+        <div class="search-hints">
+          <span class="hint-item">📝 Try: "Bangladesh election"</span>
+          <span class="hint-item">🌏 Or: "শেখ হাসিনা"</span>
+          <span class="hint-item">🔤 Or transliterated queries</span>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
